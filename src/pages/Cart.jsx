@@ -87,9 +87,9 @@ const Cart = () => {
             </ScrollLink>
             <p style={{ marginTop: '30px', display: 'flex', justifyContent: 'start', alignItems: 'center' }}>
               We Accept:
-              <img src="https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/mastercard.png" alt="Mastercard" style={{ margin: '0 5px', height: '20px', width: 'auto' }} />
-              <img src="https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/american-express.png" alt="American Express" style={{ margin: '0 5px', height: '30px', width: 'auto' }} />
-              <img src="https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/visa.png" alt="Visa" style={{ margin: '0 5px', height: '30px', width: 'auto' }} />
+              <img src="../images/mastercard.png" alt="Mastercard" style={{ margin: '0 5px', height: '20px', width: 'auto' }} />
+              <img src="../images/american-express.png" alt="American Express" style={{ margin: '0 5px', height: '30px', width: 'auto' }} />
+              <img src="../images/visa.png" alt="Visa" style={{ margin: '0 5px', height: '30px', width: 'auto' }} />
 
             </p>      </div>
 

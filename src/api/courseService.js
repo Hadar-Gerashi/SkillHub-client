@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const baseUrl = "https://skillhub-1-a27y.onrender.com/api/course"
-const baseUrlUpload = "https://skillhub-1-a27y.onrender.com/upload"
-// const baseUrlUpload = "http://localhost:8000/upload"
+const baseUrlUpload = "https://skillhub-1-a27y.onrender.com/api/upload"
+// const baseUrlUpload = "http://localhost:8000/api/upload"
 
 
 

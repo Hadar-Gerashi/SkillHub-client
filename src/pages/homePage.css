@@ -9,7 +9,7 @@
 .hero-section {
   position: relative;
   height: 700px;
-  background-image: url('https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/r1.jpg');
+  background-image: url('../images/r1.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -272,7 +272,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 170px;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/r2.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('../images/r2.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

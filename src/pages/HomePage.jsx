@@ -59,17 +59,17 @@ const HomePage = () => {
                 <h2 className="animate" style={{ marginTop: "5%", fontSize: "2rem", color: "white" }}>WHAT OUR STUDENT SAY </h2>
                 <div className="testimonials">
                     <div className="testimonial animate">
-                        <img src="https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/p1.jpg" alt="Sarah Lee" className="testimonial-img" />
+                        <img src="../images/p1.jpg" alt="Sarah Lee" className="testimonial-img" />
                         <p>"This platform is a game-changer! Courses are detailed and easy to follow."</p>
                         <p>- Sarah Lee, Web Developer</p>
                     </div>
                     <div className="testimonial animate">
-                        <img src="https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/p2.jpg" alt="David Brown" className="testimonial-img" />
+                        <img src="../images/p2.jpg" alt="David Brown" className="testimonial-img" />
                         <p>"I transitioned into a new field thanks to these courses. Highly recommend!"</p>
                         <p>- David Brown, Graphic Designer</p>
                     </div>
                     <div className="testimonial animate">
-                        <img src="https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/p3.jpg" alt="David Brown" className="testimonial-img" />
+                        <img src="../images/p3.jpg" alt="David Brown" className="testimonial-img" />
                         <p>"These courses provided me with the skills and confidence to excel in my career. Absolutely worth it!"</p>
                         <p>- Sarah Johnson, Web Developer</p>
                     </div>
@@ -77,17 +77,17 @@ const HomePage = () => {
                 </div>
                 <div className="testimonials">
                     <div className="testimonial animate">
-                        <img src="https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/p4.jpg" alt="Emily Carter" className="testimonial-img" />
+                        <img src="../images/p4.jpg" alt="Emily Carter" className="testimonial-img" />
                         <p>"The courses are well-structured and super engaging. I learned so much in a short time!"</p>
                         <p>- Emily Carter, UX Designer</p>
                     </div>
                     <div className="testimonial animate">
-                        <img src="https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/p5.jpg" alt="James Wilson" className="testimonial-img" />
+                        <img src="../images/p5.jpg" alt="James Wilson" className="testimonial-img" />
                         <p>"I was able to land my first job in tech thanks to these amazing courses. Best decision ever!"</p>
                         <p>- James Wilson, Software Engineer</p>
                     </div>
                     <div className="testimonial animate">
-                        <img src="https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/p6.jpg" alt="Olivia Martinez" className="testimonial-img" />
+                        <img src="../images/p6.jpg" alt="Olivia Martinez" className="testimonial-img" />
                         <p>"The instructors are top-notch, and the material is easy to digest. Highly recommended!"</p>
                         <p>- Olivia Martinez, Digital Marketer</p>
                     </div>

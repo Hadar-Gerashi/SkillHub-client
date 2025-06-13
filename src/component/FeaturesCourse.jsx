@@ -40,7 +40,7 @@ const FeaturesCourse = () => {
     <div className="course-features" >
       {features.map((feature, index) => (
         <div key={index} className="feature-item">
-          <img  src={`https://res.cloudinary.com/dc583pymo/image/upload/v1745307156/uploads/${feature.icon}`} alt={feature.title} className="feature-icon" />
+          <img  src={`../images/${feature.icon}`} alt={feature.title} className="feature-icon" />
           {/* <img src={feature.icon} alt={feature.title} className="feature-icon" /> */}
           <h3>{feature.title}</h3>
           <p>{feature.description}</p>
