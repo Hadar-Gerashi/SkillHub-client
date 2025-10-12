@@ -1,0 +1,75 @@
+.pagination-numbers {
+  color: white; 
+}
+
+.pagination-arrows {
+  color: white; 
+}
+
+.breadcrumb-container {
+  margin-top: 105px;
+  margin-bottom: -90px;
+  margin-right: 73%;
+}
+
+.breadcrumb-link {
+  color: white;
+  margin-top: 50%;
+  text-decoration: none;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-link + .breadcrumb-link {
+  margin-left: 5px;
+}
+
+.breadcrumb-arrow {
+  color: white;
+  margin-left: 5px;
+}
+
+.loading-stack {
+    color: white;
+    margin-left: 48%;
+}
+
+.loading-container {
+    margin-top: 60px;
+}
+
+.courses-list {
+    margin-top: 105px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-content: center;
+    padding: 0 15%;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-item {
+    list-style-type: none;
+    margin-top: 50px;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 40px;
+    padding: 10px 0;
+    margin-bottom: 60px;
+}
+
+.show-more-btn {
+    background-color: white;
+    color: black;
+    margin-bottom: 15px;
+}

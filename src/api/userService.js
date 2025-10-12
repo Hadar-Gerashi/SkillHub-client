@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = "https://skillhub-1-a27y.onrender.com/api/user"
+const baseUrl = `${import.meta.env.VITE_API_URL}/user`
 
 //אפשרות לכניסת משתמש
 export const login = (email, password) => {

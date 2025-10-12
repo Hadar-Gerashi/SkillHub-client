@@ -1,10 +1,9 @@
 import axios from 'axios'
 
-const baseUrl = "https://skillhub-1-a27y.onrender.com/api/order"
+const baseUrl = `${import.meta.env.VITE_API_URL}/order`
 
 //אפשרות להוספת הזמנה
 export const addOrder = (data, token) => {
-    console.log(data)
     return axios.post(`${baseUrl}`, data, {
         headers: {
             authorization: token

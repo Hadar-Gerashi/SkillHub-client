@@ -1,10 +1,7 @@
 import axios from 'axios'
 
-const baseUrl = "https://skillhub-1-a27y.onrender.com/api/course"
-const baseUrlUpload = "https://skillhub-1-a27y.onrender.com/api/upload"
-// const baseUrlUpload = "http://localhost:8000/api/upload"
-
-
+const baseUrl = `${import.meta.env.VITE_API_URL}/course`
+const baseUrlUpload = `${import.meta.env.VITE_API_URL}/upload`
 
 
 //קבלת רשימת כל הקורסים
@@ -20,7 +17,6 @@ export const getCourse = (id) => {
 
 //אפשרות למחיקת קורס  
 export const deleteCourse = (id, token) => {
-    console.log(token);
     return axios.delete(`${baseUrl}/${id}`, {
         headers: {
             authorization: token
@@ -30,7 +26,6 @@ export const deleteCourse = (id, token) => {
 
 //אפשרות להוספת קורס
 export const addCourse = (course, token) => {
-    console.log(token);
     return axios.post(`${baseUrl}`, course, {
         headers: {
             authorization: token
@@ -59,8 +54,10 @@ export const addImage = (data) => {
     })
 }
 
-
-
+// קבלת קטגוריות של קורסים
+export const getCategories = () => {
+  return axios.get(`${baseUrl}/categories`);
+}
 
 
 

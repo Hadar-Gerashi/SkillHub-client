@@ -1,0 +1,49 @@
+.course-info-row {
+  border-bottom: 1px solid #ddd;
+}
+
+.course-info-cell {
+  padding: 10px;
+  width: 50%;
+  height: 100px;
+}
+
+.course-info-container {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.course-text {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 14px !important;
+}
+
+.course-name {
+  margin-bottom: 14px !important;
+}
+
+.course-date {
+  font-size: 12px !important;
+}
+
+.course-duration {
+  font-size: 12px !important;
+}
+
+.course-price {
+  padding: 15px;
+  font-weight: normal !important;
+}
+
+.course-stepper {
+  padding: 15px;
+  width: 50px;
+}
+
+.course-delete {
+  padding: 10px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}

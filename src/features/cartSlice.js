@@ -31,7 +31,6 @@ const cartSlice = createSlice({
             }
             else {
                 if (state.arr[index].qty != 5) {
-                    // alert(state.arr[index].checked)
                     if (state.arr[index].checked == false) {
                         state.arr[index].checked = true
                         state.sum += (state.arr[index].price * state.arr[index].qty);
@@ -99,7 +98,6 @@ const cartSlice = createSlice({
                 const newPrice = state.arr[index].price;
                 state.sum = parseFloat(state.sum) || 0;
                 state.sum += (newPrice - oldPrice) * oldQty;
-                // saveCartToLocalStorage(state);
                 updateLocalStorage(state)
             }
         },

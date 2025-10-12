@@ -1,0 +1,159 @@
+.form-add-course {
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 130vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.step {
+  height: 65vh;
+  margin-top: -2%;
+  border: "1px solid white";
+  background: rgba(0, 0, 0, 0.495);
+  color: white;
+  border-radius: 10px;
+}
+
+.step1 {
+  height: 65vh;
+  margin-top: -2%;
+  border: "1px solid white";
+  background: rgba(0, 0, 0, 0.495);
+  color: white;
+  border-radius: 10px;
+}
+
+.step2 {
+  border: none;
+  background: rgba(0, 0, 0, 0.495);
+  color: white;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  min-height: 65vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.step2 form {
+  width: 100%;
+  height: 120vh;
+}
+
+.step2 .step2>.MuiCard-body {
+  flex-grow: 6;
+}
+
+.title {
+  margin-top: 5%;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.end {
+  font-size: 2rem;
+  text-align: center;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: black;
+}
+
+.btn-add2,
+.btn-add1 {
+  background-color: white;
+  color: black;
+  position: absolute;
+  bottom: 30px;
+  left: 63.2%;
+  transform: translateX(-50%);
+}
+
+.btn-add1 {
+  position: absolute;
+  left: 58.5%;
+  transform: translateX(-50%);
+}
+
+.error-show {
+  width: 110%;
+  margin-left: -20px;
+  margin-top: 8px;
+}
+
+
+.steps-container {
+  padding: 10px;
+  left: 0;
+  width: 100%;
+}
+
+
+.centered-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.file-upload-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.file-upload-label {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  margin-left: -50px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.file-upload-input {
+  display: none;
+}
+
+.image-preview {
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-preview-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.remove-btn {
+  width: 60px;
+  background-color: white;
+  color: black;
+}
+
+.add-location-btn {
+  background-color: white;
+  color: black;
+}
+

@@ -1,0 +1,21 @@
+.course-cell {
+  padding: 10px;
+  width: 50%;
+  height: 100px;
+}
+
+.course-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.course-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-name {
+  margin-bottom: 8px;
+}
+

@@ -1,33 +1,29 @@
 import { Routes, Route } from 'react-router-dom'
-import { loadStripe } from "@stripe/stripe-js";
 
 import './App.css'
-import CoursesList from './pages/CoursesList'
+import CoursesList from './pages/courses/CoursesList.jsx'
 import { Provider } from "../src/components/ui/provider"
-import Cart from './pages/Cart'
-import CourseDetails from './pages/CourseDetails'
-import { SignUp } from './pages/SignUp'
-import Login from './pages/Login'
-import NavBar from './component/NavBar'
-import AddCourse from './pages/AddCourseForm'
-import Checkout from './pages/Checkout'
-import MyOrders from './pages/MyOrders'
-import HomePage from './pages/HomePage.jsx'
-import Footer from './component/Footer'
-import ScrollToTop from './component/ScrollToTop'
+import Cart from './pages/cart/Cart.jsx'
+import CourseDetails from './pages/courses/CourseDetails.jsx'
+import { SignUp } from './pages/auth/SignUp.jsx'
+import Login from './pages/auth/Login.jsx'
+import NavBar from './component/layout/NavBar.jsx'
+import AddCourse from './pages/courses/AddCourseForm.jsx'
+import Checkout from './pages/cart/Checkout.jsx'
+import MyOrders from './pages/orders/MyOrders.jsx'
+import HomePage from './pages/home/HomePage.jsx'
+import Footer from './component/layout/Footer.jsx'
+import ScrollToTop from './component/common/ScrollToTop.jsx'
 
 
 function App() {
 
-  // const stripePromise = loadStripe("pk_test_51QzFsb4SREYpQGgTFYbNdzItzEYcbYkkUqgJsd98a2vnvjpvTW4gU6m3f374ePldLZO1kAA7E7vu0pXBLQbVwQiE001oxluMXN")
   return (
 
     <>
       <Provider>
-
         <NavBar />
-        <ScrollToTop /> 
-
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<CoursesList type={'list'} />} >
             <Route path="details/:id" element={<CourseDetails />} />
