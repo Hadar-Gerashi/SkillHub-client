@@ -15,7 +15,6 @@ const CourseCarousel = () => {
     const fetchCourses = async () => {
       try {
         const res = await getAllCourses(1);
-        console.log(res.data);
         setCourses(res.data);
       } catch (err) {
         console.error(err);

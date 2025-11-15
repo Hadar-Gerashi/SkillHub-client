@@ -132,19 +132,24 @@ const Checkout = () => {
               />
             </Field>
 
+
             <Field label="Card Number" className="field-label">
               <Input
                 {...register("cardNumber", {
                   required: "Card number is required",
-                  pattern: { value: /^\d{16}$/, message: "Card number must be 16 digits" },
+                  pattern: {
+                    value: /^(\d{4}\s?){4}$/,
+                    message: "Card number must be 16 digits",
+                  },
                 })}
                 className={`input-checkout ${errors.cardNumber ? "error-border" : ""}`}
                 placeholder="**** **** **** ****"
-                maxLength={16}
+                maxLength={19}
                 onInput={handleCardNumberChange}
               />
               <FaCreditCard className="input-icon card-icon" />
             </Field>
+
 
             <div className="form-row">
               <Field label="Expiry Date" className="field-label">
