@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { requestInstructor } from "../../api/userService";
 import { userIn } from "../../features/userSlice";
-import "./BecomeInstructor.css";
+import "./Becomeinstructor.css";
 
 const BecomeInstructor = () => {
   const currentUser = useSelector((state) => state.users.currentUser);
