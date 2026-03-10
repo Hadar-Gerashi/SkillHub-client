@@ -1,7 +1,7 @@
 import { Box, Button, Card, HStack, Image } from "@chakra-ui/react";
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { useState } from "react";
-import "./ExternalCourse.css";
+import "./Externalcourse.css";
 import ClampedText from "../common/ClampedText";
 
 const ExternalCourse = ({ course }) => {
