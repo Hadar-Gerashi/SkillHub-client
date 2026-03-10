@@ -2,18 +2,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120vh;
+    min-height: 100vh;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('../images/login.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .input-login {
-    border: "5px solid teal";
-    color: white
+    background: transparent;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .chakra-icon {
@@ -29,22 +33,24 @@ input:focus {
 }
 
 .card-login {
-    position: absolute;
-    top: 130px;
-    left: 35%;
+    position: relative;
+    top: 35px;
     width: 430px;
+    max-width: 95%;
     min-height: 65vh;
     background: rgba(0, 0, 0, 0.322);
     color: white;
     border-radius: 10px;
     border: none;
-    transition: min-height 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .error-container {
     width: 90%;
-    margin-left: 5%;
-    margin-bottom: 15px;
+    margin: 0 auto 15px auto;
 }
 
 .error-message {
@@ -58,16 +64,6 @@ input:focus {
 
 .link {
     color: grey;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    text-decoration: underline;
+    cursor: pointer;
 }

@@ -44,7 +44,6 @@ const Checkout = () => {
     if (!userId) return navigate("/login");
 
     try {
-      alert("Processing payment...");
       await addOrder({ count, totalSum: sum, courses, userId }, userId.token);
       show();
       dispatch(deleteCart());

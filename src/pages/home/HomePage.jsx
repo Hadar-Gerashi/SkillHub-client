@@ -49,7 +49,7 @@ const HomePage = () => {
 
                 <FeaturesCourse />
             </div>
-
+            {/* 
 
             <div className="testimonials-section">
                 <h2 className="animate_student" >WHAT OUR STUDENT SAY </h2>
@@ -90,7 +90,7 @@ const HomePage = () => {
 
 
                 </div>
-            </div>
+            </div> */}
 
 
         </div>   </>

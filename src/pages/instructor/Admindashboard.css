@@ -1,0 +1,268 @@
+.admin-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 14px;
+    background-color: rgb(14, 13, 13);
+}
+
+.admin-loading p {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.admin-spinner {
+    width: 36px;
+    height: 36px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-top-color: #00CED1;
+    border-radius: 50%;
+    animation: admin-spin 0.8s linear infinite;
+}
+
+@keyframes admin-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.admin-dashboard {
+    min-height: 100vh;
+    background-color: rgb(14, 13, 13);
+    padding: 110px 60px 80px;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-title {
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+}
+
+.admin-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 0 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-tabs .tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-tabs .tab-btn:hover {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.admin-tabs .tab-btn.active {
+    color: #00CED1;
+    border-bottom-color: #00CED1;
+}
+
+.admin-tabs .badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 7px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.admin-tabs .tab-btn.active .badge {
+    background: rgba(0, 206, 209, 0.12);
+    color: #00CED1;
+}
+
+.tab-content {
+    width: 100%;
+}
+
+.empty-msg {
+    text-align: center;
+    padding: 100px 20px;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.pending-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: background 0.2s;
+    gap: 20px;
+}
+
+.pending-card:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.pending-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pending-info h3 {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.pending-info p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.8rem;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.pending-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    background: rgba(255, 215, 0, 0.08);
+    padding: 3px 10px;
+    border-radius: 2px;
+    width: fit-content;
+    margin-top: 4px;
+}
+
+.pending-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.approve-btn,
+.reject-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 18px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid;
+    border-radius: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.approve-btn {
+    background: white;
+    border-color: white;
+    color: black;
+}
+
+.approve-btn:hover {
+    background: transparent;
+    color: white;
+}
+
+.reject-btn {
+    background: transparent;
+    border-color: rgba(255, 68, 68, 0.5);
+    color: #ff6666;
+}
+
+.reject-btn:hover {
+    background: rgba(255, 68, 68, 0.08);
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+.tab-content .mc-list,
+.admin-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 8px;
+}
+
+@media (max-width: 1200px) {
+
+    .tab-content .mc-list,
+    .admin-courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 860px) {
+    .admin-dashboard {
+        padding: 90px 20px 60px;
+    }
+
+    .tab-content .mc-list,
+    .admin-courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-title {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+    }
+
+    .pending-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 520px) {
+    .admin-dashboard {
+        padding: 80px 12px 50px;
+    }
+
+    .admin-tabs {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .admin-tabs::-webkit-scrollbar {
+        display: none;
+    }
+}

@@ -58,7 +58,7 @@ const Cart = () => {
             <h3>Total</h3>
             <div className="total-row">
               <span>Total:</span>
-              <span>${sum}</span>
+              <span>${sum.toLocaleString()}</span>
             </div>
             <div className="total-row">
               <span>Count:</span>

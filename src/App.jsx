@@ -8,12 +8,15 @@ import CourseDetails from './pages/courses/CourseDetails.jsx'
 import { SignUp } from './pages/auth/SignUp.jsx'
 import Login from './pages/auth/Login.jsx'
 import NavBar from './component/layout/NavBar.jsx'
-import AddCourse from './pages/courses/AddCourseForm.jsx'
+import AddCourse from './pages/courses/addCourseForm/AddCourseForm.jsx'
 import Checkout from './pages/cart/Checkout.jsx'
 import MyOrders from './pages/orders/MyOrders.jsx'
 import HomePage from './pages/home/HomePage.jsx'
 import Footer from './component/layout/Footer.jsx'
 import ScrollToTop from './component/common/ScrollToTop.jsx'
+import AdminDashboard from './pages/instructor/Admindashboard.jsx'
+import BecomeInstructor from './pages/instructor/Becomeinstructor.jsx'
+import MyCourses from './pages/instructor/InstructorCourses.jsx'
 
 
 function App() {
@@ -38,6 +41,9 @@ function App() {
           <Route path="/orders" element={<MyOrders status={"All"} key="All" />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/become-instructor" element={<BecomeInstructor />} />
+          <Route path="/my-courses" element={<MyCourses />} />
         </Routes>
         <Footer />
       </Provider>

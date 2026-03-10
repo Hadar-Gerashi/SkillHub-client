@@ -7,3 +7,13 @@
    color: rgb(159, 19, 19);
    font-size: 14px;
  }
+
+ #root {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+ }
+
+ * {
+  box-sizing: border-box;
+}

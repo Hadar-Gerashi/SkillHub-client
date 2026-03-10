@@ -14,7 +14,7 @@ const CourseInOrder = ({ course, onDelete }) => {
                         <strong className="course-name" >{course.name}</strong>
                         <p style={{ fontSize: "12px" }}><b> Open Date:</b> {course?.openingDate.substring(0, 10)}</p>
                         <p style={{ fontSize: "12px" }}><b> During:</b> {course?.long} meetings</p>
-                        <p style={{ fontSize: "12px" }}><b> Price:</b> {course?.price}$</p>
+                        <p style={{ fontSize: "12px" }}><b> Price:</b> {course?.price.toLocaleString()}$</p>
                         <p style={{ fontSize: "12px" }}><b> Qty:</b> {course?.qty}</p>
                     </div>  </div>
                 {course.description}

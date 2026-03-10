@@ -7,14 +7,13 @@ import Alert from "@mui/material/Alert";
 import Collapse from "@mui/material/Collapse";
 import Grow from "@mui/material/Grow";
 import Fade from "@mui/material/Fade";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Field } from "../../components/ui/field.jsx";
 import { PasswordInput } from "../../components/ui/password-input.jsx";
 import { login } from "../../api/userService.js";
 import { userIn } from "../../features/userSlice.js";
 import "./Login.css";
-
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -28,13 +27,8 @@ const Login = () => {
         let apiErrors = [];
         if (data.password != data.verification) {
             apiErrors.push("Incorrect verification");
-
             setErrorMessages(apiErrors);
         }
-
-
-
-
         else {
             try {
                 const res = await login(data.email, data.password);
@@ -47,7 +41,6 @@ const Login = () => {
                 }
             } catch (err) {
                 console.error(err);
-
 
                 if (err.response?.data?.message === "Incorrect password") {
                     apiErrors.push("Incorrect password, please try again.");

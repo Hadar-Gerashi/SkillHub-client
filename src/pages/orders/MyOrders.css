@@ -1,0 +1,8 @@
+.orders-title {
+    color: white;
+    text-align: left;
+    margin-left: clamp(1rem, 50vw, 11%);
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    margin-top: 80px;
+    padding-top: 1rem;
+}

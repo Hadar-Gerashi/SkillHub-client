@@ -2,43 +2,80 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 130vh;
+    min-height: 100vh;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('../images/login.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .card-signup {
-    position: absolute;
-    top: 110px;
-    left: 35%;
+    position: relative;
+    top: 35px;
     width: 430px;
+    max-width: 95%;
     min-height: 65vh;
     background: rgba(0, 0, 0, 0.322);
     color: white;
     border-radius: 10px;
-    border: none;
-    transition: min-height 0.3s ease-in-out;
+    border: none !important;
+    transition: all 0.3s ease-in-out;
+    margin: 20px auto;
+}
+
+.card-description {
+    color: white;
+}
+
+.card-body {
+    margin-bottom: -10px;
 }
 
 .input-signup {
     background: transparent;
-    color: white
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.git {
-    height: 200px;
-    background-color: blue;
+.role {
+    color: white;
 }
 
+.role-select__control {
+    background-color: white !important;
+    border-color: #cccccc !important;
+    border-width: 0px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.role-select__control--is-focused {
+    border-color: #ffffff !important;
+    box-shadow: 0 0 10px rgba(196, 198, 200, 0.5) !important;
+}
+
+.role-select__single-value {
+    color: black !important;
+}
+
+.role-select__option {
+    color: black !important;
+    background-color: white !important;
+}
+
+.role-select__option--is-focused {
+    background-color: white !important;
+}
 
 .error-container {
     width: 90%;
-    margin-left: 5%;
-    margin-bottom: 15px;
+    margin: 0 auto 15px auto;
 }
 
 .error-message {
@@ -50,18 +87,13 @@
     animation: fadeIn 0.3s ease-in-out;
 }
 
-.role{
-    color: white;
+.card-footer {
+    justify-content: flex-end;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.submit-btn {
+    width: 385px !important;
+    color: black !important;
+    background-color: white !important;
+    visibility: visible !important;
 }

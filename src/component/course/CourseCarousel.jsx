@@ -2,28 +2,43 @@ import { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-import { getAllCourses } from '../../api/courseService.js';
+import { getAllCourses, getTotalPages } from '../../api/courseService.js';
 import './CourseCarousel.css';
+import { useSelector } from 'react-redux';
+import { getRecommended } from '../../api/recommendedService.js';
 
 const CourseCarousel = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [showCourseDetails, setShowCourseDetails] = useState(false);
   const [hoveredCourseIndex, setHoveredCourseIndex] = useState(null);
   const [courses, setCourses] = useState([]);
+  const user = useSelector(state => state.users.currentUser);
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await getAllCourses(1);
+        if (user?.token) {
+          const res = await getRecommended(user.token);
+          if (res.data.recommendations?.length > 0) {
+            setCourses(res.data.recommendations);
+            return;
+          }
+        }
+        // מביא פופולריים
+        const numPages = await getTotalPages();
+        const res = await getAllCourses(numPages.data.pages);
         setCourses(res.data);
       } catch (err) {
-        console.error(err);
-        alert("Error fetching courses");
+        // גם אם getRecommended 
+        const numPages = await getTotalPages();
+        const res = await getAllCourses(numPages.data.pages);
+        setCourses(res.data);
       }
     };
 
     fetchCourses();
-  }, []);
+  }, [user]);
+
 
   const handleNext = () => {
     setStartIndex((prevIndex) => (prevIndex + 1) % courses.length);
@@ -52,7 +67,7 @@ const CourseCarousel = () => {
 
   return (
     <div className="carousel-container">
-      <h1 className="courses-title"> OUR COURSES </h1>
+      <h1 className="courses-title"> {user ? <span>RECOMMENDED FOR YOU</span> : <span>MOST POPULAR COURSES</span>} </h1>
       <div className="carousel-wrapper">
 
         <button className="carousel-arrow left" onClick={handlePrev}>
@@ -78,7 +93,14 @@ const CourseCarousel = () => {
                 >
                   <h2><b>{course.name}</b></h2>
                   <p>{course.motivation}</p>
-                  <p className="course-price">price: {course.price}$</p>
+                  {course.categories?.length > 0 && (
+                    <div className="course-categories">
+                      {course.categories.map((cat, i) => (
+                        <span key={i} className="course-category">{cat.toLowerCase()}</span>
+                      ))}
+                    </div>
+                  )}
+                  <p className="course-price">price: {course.price.toLocaleString()}$</p>
                 </div>
                 <div className="course-title-overlay">
                   {course.title}

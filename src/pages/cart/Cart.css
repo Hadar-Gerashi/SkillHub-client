@@ -1,28 +1,35 @@
 .cart-container {
   height: 100%;
-  margin-bottom: 30%;
+  margin-bottom: 10%;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .cart-main {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   margin-top: 5%;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .cart-box {
   font-family: Arial, sans-serif;
   background-color: #fafafa;
-  width: 800px;
-  margin: 20px 20px 20px 1px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px 0;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .cart-title {
-  margin-right: 70%;
   font-size: 20px;
   font-weight: bold;
+  margin: 0 0 10px 0;
 }
 
 .cart-table {
@@ -34,6 +41,7 @@
 
 .cart-table th {
   padding: 10px;
+  font-size: 14px;
 }
 
 .cart-table th:first-child {
@@ -48,45 +56,34 @@
   text-align: center;
 }
 
-.pay-logo {
-  margin: 0 5px;
-  width: auto;
-}
-
-.pay-logo.mastercard {
-  height: 20px;
-}
-
-.pay-logo.amex {
-  height: 30px;
-}
-
-.pay-logo.visa {
-  height: 30px;
-}
-
 .total-box {
+  width: 100%;
+  max-width: 300px;
   margin-top: 20px;
-  width: 300px;
-  height: 250px;
+  flex-shrink: 0;
 }
 
 .total-inner {
   width: 100%;
   padding: 20px;
   background-color: #f9f9f9;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  margin-bottom: -10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 .total-inner h3 {
+  margin-top: 0;
   border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
 }
 
 .total-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+  font-size: 14px;
 }
 
 .checkout-link {
@@ -99,36 +96,114 @@
   width: 100%;
   border-top: 1px solid #ddd;
   text-align: center;
-  display: inline-block;
+  display: block;
   text-decoration: none;
+  box-sizing: border-box;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.checkout-link:hover {
+  background-color: #333;
 }
 
 .payment-methods {
-  margin-top: 30px;
+  margin-top: 16px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 13px;
 }
 
-.payment-methods img {
-  margin: 0 5px;
+.pay-logo {
+  margin: 0 4px;
+  width: auto;
+}
+
+.pay-logo.mastercard {
+  height: 20px;
+}
+
+.pay-logo.amex {
+  height: 28px;
+}
+
+.pay-logo.visa {
+  height: 28px;
 }
 
 @keyframes blink {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 1;
   }
-  
-  .blinking {
-    animation: blink 1s ease-in-out infinite;
-  }
-  
 
- 
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking {
+  animation: blink 1s ease-in-out infinite;
+}
+
+@media screen and (max-width: 1024px) {
+  .cart-main {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .cart-box {
+    max-width: 100%;
+  }
+
+  .total-box {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .total-inner {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cart-container {
+    padding: 0 10px;
+    margin-bottom: 20%;
+  }
+
+  .cart-main {
+    margin-top: 70px;
+  }
+
+  .cart-box {
+    padding: 14px;
+    margin: 10px 0;
+  }
+
+  .cart-title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cart-title {
+    font-size: 15px;
+  }
+
+  .payment-methods {
+    font-size: 12px;
+  }
+
+  .checkout-link {
+    padding: 12px;
+    font-size: 15px;
+  }
+}

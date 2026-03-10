@@ -1,0 +1,68 @@
+.step1-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.step1-card {
+  border: 0px !important;
+  width: 100%;
+  max-width: 500px;
+}
+
+.step1-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step1-ai-thinking {
+  font-size: 12px;
+  color: #a78bfa;
+  font-weight: normal;
+}
+
+.step1-ghost-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.step1-textarea {
+  background: transparent !important;
+  position: relative;
+  z-index: 2;
+}
+
+.step1-ghost-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 12px;
+  color: rgba(150, 150, 150, 0.55);
+  font-size: 14px;
+  line-height: 1.5;
+  pointer-events: none;
+  z-index: 1;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+.step1-ai-hint {
+  font-size: 11px;
+  color: #a78bfa;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.step1-kbd {
+  background: rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 11px;
+}

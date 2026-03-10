@@ -18,38 +18,38 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            let copy;
-
-            let index = state.arr.findIndex(course => course._id == action.payload._id)
-
-            if (index == -1) {
-                copy = { ...action.payload, qty: 1, checked: true }
-                state.arr.push(copy)
-                console.log(copy)
-                state.sum += action.payload.price;
+            const course = action.payload;
+            const index = state.arr.findIndex(item => item._id === course._id);
+            if (index === -1) {
+                state.arr.push({
+                    ...course,
+                    qty: 1,
+                    checked: true
+                });
+                state.sum += course.price;
                 state.count += 1;
             }
             else {
-                if (state.arr[index].qty != 5) {
-                    if (state.arr[index].checked == false) {
-                        state.arr[index].checked = true
-                        state.sum += (state.arr[index].price * state.arr[index].qty);
-                        state.count += state.arr[index].qty;
-
-                    }
-                    state.arr[index].qty += 1
-                    console.log({ ...state.arr[index] })
-                    state.sum += action.payload.price;
-                    state.count += 1;
-
+                const item = state.arr[index];
+                if (item.qty === 5) return;
+                if (!item.checked) {
+                    item.checked = true;
+                    state.sum += item.price * item.qty;
+                    state.count += item.qty;
                 }
+                item.qty += 1;
+                state.sum += item.price;
+                state.count += 1;
             }
-            updateLocalStorage(state)
-        },
+            updateLocalStorage(state);
+        }
+        ,
         removeFromCart: (state, action) => {
             let index = state.arr.findIndex(course => course._id == action.payload)
-            state.sum -= (state.arr[index].price * state.arr[index].qty);
-            state.count -= state.arr[index].qty;
+            if (state.arr[index].checked == true) {
+                state.sum -= (state.arr[index].price * state.arr[index].qty);
+                state.count -= state.arr[index].qty;
+            }
             state.arr.splice(index, 1)
             updateLocalStorage(state)
         },
@@ -61,7 +61,6 @@ const cartSlice = createSlice({
                 state.sum -= action.payload.price;
                 state.count -= 1;
             }
-            console.log({ ...state.arr[index] })
             updateLocalStorage(state)
 
         },
@@ -73,7 +72,6 @@ const cartSlice = createSlice({
                 state.sum += action.payload.price;
                 state.count += 1;
             }
-            console.log({ ...state.arr[index] })
             updateLocalStorage(state)
 
         },
@@ -91,7 +89,6 @@ const cartSlice = createSlice({
             const { id, data } = action.payload;
             let index = state.arr.findIndex(item => item._id === id);
             if (index !== -1) {
-                console.log(data);
                 const oldPrice = state.arr[index].price;
                 const oldQty = state.arr[index].qty;
                 state.arr[index] = { ...state.arr[index], ...data };
@@ -118,10 +115,6 @@ const cartSlice = createSlice({
             state.count += state.arr[index].qty;
             updateLocalStorage(state)
         },
-
-
-
-
     }
 })
 

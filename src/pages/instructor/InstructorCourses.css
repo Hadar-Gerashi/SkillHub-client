@@ -1,0 +1,188 @@
+.mc-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 14px;
+    background-color: black;
+}
+
+.mc-loading p {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.mc-spinner {
+    width: 36px;
+    height: 36px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-top-color: #00CED1;
+    border-radius: 50%;
+    animation: mc-spin 0.8s linear infinite;
+}
+
+@keyframes mc-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.mc-page {
+    min-height: 100vh;
+    background-color: rgb(14, 13, 13);
+    padding: 110px 60px 80px;
+    color: #fff;
+}
+
+.mc-page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+}
+
+.mc-page-title {
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+}
+
+.mc-page-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.mc-add-btn {
+    padding: 11px 24px;
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.mc-add-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.mc-page-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mc-page-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mc-page-tab:hover {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.mc-page-tab.active {
+    color: #00CED1;
+    border-bottom-color: #00CED1;
+}
+
+.mc-page-tab-count {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 7px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.mc-page-tab.active .mc-page-tab-count {
+    background: rgba(0, 206, 209, 0.12);
+    color: #00CED1;
+}
+
+.mc-empty {
+    text-align: center;
+    padding: 100px 20px;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.mc-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+@media (max-width: 1200px) {
+    .mc-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 860px) {
+    .mc-page {
+        padding: 90px 20px 60px;
+    }
+
+    .mc-list {
+        grid-template-columns: 1fr;
+    }
+
+    .mc-page-title {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+    }
+}
+
+@media (max-width: 520px) {
+    .mc-page {
+        padding: 80px 12px 50px;
+    }
+
+    .mc-page-tabs {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .mc-page-tabs::-webkit-scrollbar {
+        display: none;
+    }
+}

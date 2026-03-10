@@ -4,18 +4,23 @@ import { Link, useNavigate } from "react-router-dom";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
 
-
 import { deleteCourse } from '../../api/courseService.js'
 import { removeFromCart, addToCart, isOpenDrawer } from '../../features/cartSlice.js'
 import AlertDialog from "../common/AlertDialog.jsx";
 import './Course.css'
 
-
-// קומפוננטה של קורס בודד ברשימת הקורסים
+// קומפוננטה להצגת קורס בודד מרשימת הקורסים
 const Course = ({ course, onDelete, type, setIsCourse }) => {
     let dispatch = useDispatch()
     let navigate = useNavigate()
     let user = useSelector(state => state.users.currentUser)
+
+    const now = new Date();
+    const openingDate = course?.openingDate ? new Date(course.openingDate) : null;
+    const endDate = openingDate && course?.long
+        ? new Date(openingDate.getTime() + course.long * 24 * 60 * 60 * 1000)
+        : null;
+    const hasStarted = openingDate && now > openingDate && (!endDate || now <= endDate);
 
     const deleted = async () => {
         try {
@@ -32,9 +37,24 @@ const Course = ({ course, onDelete, type, setIsCourse }) => {
     };
 
     return (
-        <Card.Root flexDirection="row" overflow="hidden" height="246px" width="390px" border="none">
+        <Card.Root
+            className={`course-list-card ${hasStarted ? "course-started" : ""}`}
+            flexDirection="row"
+            overflow="hidden"
+            height="246px"
+            width="390px"
+            border="none"
+            style={{ position: "relative" }}
+        >
+            {hasStarted && (
+                <div className="course-ribbon">Already Started</div>
+            )}
 
+            {user?.role === "ADMIN" && course?.instructorId && (
+                <div className="instructor-ribbon">Instructor</div>
+            )}
             <Image
+                className="course-list-card-img"
                 objectFit="cover"
                 width="30%"
                 height="246px"
@@ -43,10 +63,11 @@ const Course = ({ course, onDelete, type, setIsCourse }) => {
             />
 
             <Box>
-
                 <Card.Body>
-                    <Card.Title mb="2">{course?.name[0].toUpperCase() + course?.name.slice(1).toLowerCase()}</Card.Title>
-                    <Card.Description className="description" >
+                    <HStack mb="2" align="center">
+                        <Card.Title>{course?.name.replace(/\b\w/g, c => c.toUpperCase())}</Card.Title>
+                    </HStack>
+                    <Card.Description className="description">
                         {course?.motivation}
                     </Card.Description>
                     <HStack mt="4">
@@ -67,6 +88,7 @@ const Course = ({ course, onDelete, type, setIsCourse }) => {
                             <Link to={"details/" + course?._id}>
                                 <Button onClick={() => { setIsCourse(course?.name) }}>Show Details</Button>
                             </Link>}
+
                         <button
                             className="add-to-cart"
                             onClick={() => {
@@ -76,6 +98,7 @@ const Course = ({ course, onDelete, type, setIsCourse }) => {
                         >
                             <AddShoppingCartIcon sx={{ color: "black" }} />
                         </button>
+
                         {user?.role === "ADMIN" && <AlertDialog deleted={deleted} />}
                         {user?.role === "ADMIN" && (
                             <button
@@ -86,15 +109,11 @@ const Course = ({ course, onDelete, type, setIsCourse }) => {
                                 <DriveFileRenameOutlineOutlinedIcon />
                             </button>
                         )}
-
                     </HStack>
                 </Card.Footer>
-
             </Box>
-
         </Card.Root>
     );
 };
 
 export default Course;
-

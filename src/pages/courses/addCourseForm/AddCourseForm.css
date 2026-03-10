@@ -1,0 +1,390 @@
+.form-add-course {
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.step {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: 65vh;
+  margin-top: -2%;
+  background: rgba(0, 0, 0, 0.495);
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  box-sizing: border-box;
+}
+
+.step1 {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: 78vh;
+  margin-top: -2%;
+  background: rgba(0, 0, 0, 0.495);
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  box-sizing: border-box;
+}
+
+.step2 {
+  border: none;
+  background: rgba(0, 0, 0, 0.495);
+  color: white;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 600px;
+  min-height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.title {
+  margin-top: 5%;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.end {
+  font-size: 2rem;
+  text-align: center;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: black;
+}
+
+.btn-add2,
+.btn-add1 {
+  background-color: white;
+  color: black;
+  position: absolute;
+  bottom: 30px;
+  left: 63.2%;
+  transform: translateX(-50%);
+}
+
+.btn-add1 {
+  position: absolute;
+  left: 58.5%;
+  transform: translateX(-50%);
+}
+
+.error-show {
+  width: 110%;
+  margin-left: -20px;
+  margin-top: 8px;
+}
+
+.steps-container {
+  padding: 10px;
+  left: 0;
+  width: 100%;
+}
+
+.centered-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.step3-flex {
+  display: flex;
+  gap: 16px;
+  padding: 30px;
+  flex-wrap: wrap;
+  margin-bottom: -10px;
+}
+
+.step3-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+.categories-field {
+  width: 50%;
+  padding: 0 30px 20px 30px;
+  box-sizing: border-box;
+}
+
+.file-upload-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.file-upload-label {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.file-upload-input {
+  display: none;
+}
+
+.image-preview {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  border: 2px dashed #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-preview-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.remove-btn {
+  width: 60px;
+  background-color: white;
+  color: black;
+}
+
+.add-location-btn {
+  background-color: white;
+  color: black;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  z-index: 999;
+  margin-top: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.suggestion-item {
+  padding: 10px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.suggestion-main {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.suggestion-sub {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
+}
+
+.day-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.day-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: white;
+  color: #555;
+  font-weight: normal;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.day-btn--selected {
+  border-color: #2d8a70;
+  background: #2d8a70;
+  color: white;
+  font-weight: bold;
+}
+
+.day-error {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-top: 6px;
+  display: block;
+}
+
+.day-selected-label {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  display: block;
+}
+
+.sessions-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px;
+  margin-top: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.session-chip {
+  background: #e6f4f1;
+  color: #2d8a70;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 13px;
+  border: 1px solid #b2dfdb;
+  white-space: nowrap;
+}
+
+.skipped-holidays {
+  margin-top: 10px;
+}
+
+.skipped-label {
+  font-size: 12px;
+  color: #999;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.skipped-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skipped-chip {
+  background: #fff3e0;
+  color: #e65100;
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 12px;
+  border: 1px solid #ffcc80;
+  text-decoration: line-through;
+}
+.error-container{
+  margin-bottom: 8%;
+}
+
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+@media (max-width: 768px) {
+  .form-add-course {
+    padding: 15px;
+  }
+
+  .step,
+  .step1 {
+    max-width: 100%;
+    min-height: unset;
+  }
+
+  .step2 {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .btn-add2,
+  .btn-add1 {
+    position: static;
+    transform: none;
+    left: unset;
+    bottom: unset;
+    margin-top: 16px;
+  }
+
+  .step3-flex {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .categories-field {
+    width: 100%;
+    padding: 0 15px 15px 15px;
+  }
+
+  .title {
+    margin-top: 14%;
+  }
+
+  .end {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .day-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 11px;
+  }
+
+  .session-chip {
+    font-size: 11px;
+    padding: 3px 7px;
+  }
+}
+
+.datepicker-full-width {
+  width: 100%;
+}
+
+.datepicker-full-width input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.datepicker-full-width {
+  width: 100%;
+}

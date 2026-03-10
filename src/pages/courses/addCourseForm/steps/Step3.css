@@ -1,0 +1,88 @@
+.step3-field-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+.step3-location-row {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  align-items: center;
+}
+
+.step3-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.step3-input-valid {
+  border-color: #48bb78 !important;
+  padding-right: 32px;
+}
+
+.step3-input-invalid {
+  border-color: #fc8181 !important;
+  padding-right: 32px;
+}
+
+.step3-input-default {
+  padding-right: 32px;
+}
+
+.step3-status-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.step3-loc-error {
+  color: #fc8181;
+  font-size: 12px;
+}
+
+.step3-loc-success {
+  color: #48bb78;
+  font-size: 12px;
+}
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.step3-ai-hint-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  background: rgba(167, 139, 250, 0.08);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: 6px;
+  font-size: 12px;
+  color: #a78bfa;
+}
+
+.step3-kbd-accept {
+  background: rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: 11px;
+  cursor: pointer;
+  color: #a78bfa;
+}
+
+.step3-kbd-dismiss {
+  background: transparent;
+  border: 1px solid rgba(150, 150, 150, 0.3);
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: 11px;
+  cursor: pointer;
+  color: #888;
+}

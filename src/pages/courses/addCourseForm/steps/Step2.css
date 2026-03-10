@@ -1,0 +1,42 @@
+.step2-ghost-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.step2-input-transparent {
+  background: transparent !important;
+  position: relative;
+  z-index: 2;
+}
+
+.step2-ghost-inline {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  color: rgba(150, 150, 150, 0.55);
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.step2-ai-hint {
+  font-size: 11px;
+  color: #a78bfa;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.step2-kbd {
+  background: rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 11px;
+}
+
+.step2-price-note {
+  color: rgba(167, 139, 250, 0.7);
+}
