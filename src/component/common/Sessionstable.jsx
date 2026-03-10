@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { parseLocalDate, PREVIEW_COUNT } from "../../utils/courseUtils";
+import { parseLocalDate, PREVIEW_COUNT } from "../../utils/courseutils";
 
 const SessionsTable = ({
     sessions = [],
