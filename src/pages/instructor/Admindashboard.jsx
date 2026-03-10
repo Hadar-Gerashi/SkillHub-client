@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getPendingInstructors, handleInstructorRequest } from "../../api/userService";
 import { getPendingCourses, handleCourseApproval } from "../../api/courseService";
 import SharedCourseCard from "../../component/instructor/CourseManagementCard";
-import "./AdminDashboard.css";
+import "./Admindashboard.css";
 import Loading from "../../component/common/Loading";
 
 const AdminDashboard = () => {
