@@ -16,7 +16,7 @@ import Footer from './component/layout/Footer.jsx'
 import ScrollToTop from './component/common/ScrollToTop.jsx'
 import BecomeInstructor from './pages/instructor/BecomeInstructor.jsx'
 import MyCourses from './pages/instructor/InstructorCourses.jsx'
-import AdminDashboard from './pages/instructor/Admindashboard.jsx'
+import AdminDashboard from './pages/instructor/AdminDashboard.jsx'
 
 
 function App() {
