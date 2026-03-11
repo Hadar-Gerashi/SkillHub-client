@@ -1,192 +1,200 @@
 # SkillHub – Client-Side Course Management Interface
 
-**SkillHub** is a modern, responsive client-side interface built for browsing digital courses, managing orders, and handling user authentication (registration and login). It leverages a powerful tech stack to ensure a fast, efficient, and well-organized user experience.
+**SkillHub** is a modern, responsive client-side interface built for browsing and purchasing digital courses, managing orders, and handling user authentication. Built with React and a rich tech stack to deliver a fast, smart, and well-organized learning experience.
 
-## Project Overview
+---
 
-The client-side is built with **React**, utilizing **Redux Toolkit** for robust global state management and **React Hook Form** for efficient, validation-focused form handling. It communicates with a **REST API** via **Axios**. User authentication is managed using **JWT**, providing **role-based access control** for regular users and administrators. Login data and user-specific changes are persisted in **LocalStorage**.
+## **Main Features**
 
+### **User Management**
+- Registration and login secured with **JWT**
+- User authentication data persisted in **LocalStorage**
+- Update personal profile details (name, email, password)
+- **Role-based access control (RBAC)** - three roles: `USER`, `INSTRUCTOR`, `ADMIN`
 
+### **Instructor Flow**
+- Any user can apply to become an instructor via a dedicated **Become an Instructor** page
+- Request status is tracked live: `PENDING → APPROVED / REJECTED`
+- Instructors can add, edit, and manage their own courses
+- Instructors see their own course list with status indicators (pending / approved / rejected)
+- After a rejection, instructors can resubmit for re-review
 
-## Main Features
+### **Admin Dashboard**
+- Dedicated `/admin` page with two management tabs:
+  - **Pending Instructors** - approve or reject instructor requests
+  - **Pending Courses** - approve or reject new courses and pending edits
+- Badge counters showing number of items awaiting review
 
-### User Management
-* Registration and login secured with **JWT**.
-* Storage of user authentication data in **LocalStorage**.
-* Functionality to update personal profile details (name, email, password).
-* **Role-based access control** (RBAC) differentiating between regular users and managers.
+### **Course Management**
+- Display of all available courses with images and full details
+- Filtering by **category** and **search by name**
+- **Pagination** for course browsing
+- Dedicated course details page
+- **Add / Edit course** via a multi-step form (3 steps)
+- Course images uploaded securely to Cloudinary via backend
 
-### Course Management
-* Display of all available courses, including images and detailed information.
-* Filtering and searching capabilities for courses by category.
-* Dedicated view for a single course with comprehensive details.
+### **AI Course Enhancement**
+- When adding a course, instructors can type the course name and hit **"Enhance with AI"**
+- The AI (Groq / LLaMA 3.3) auto-generates:
+  - ✓ Detailed course description
+  - ✓ Short motivational tagline
+  - ✓ Recommended number of sessions
+  - ✓ Relevant categories
+  - ✓ Suggested price in NIS + pricing rationale
 
-### Order / Cart Management
-* Ability to add and remove courses from the shopping **cart**.
-* Viewing history of completed orders.
-* Functionality to delete pending orders.
+### **Smart Recommendations**
+- Logged-in users see **personalized course recommendations** on the home page
+- Powered by a hybrid algorithm: Collaborative Filtering + Category Affinity + Popularity Boost
 
-### Forms & Data Handling
-* Efficient form management and validation using **React Hook Form**.
-* Persistent storage of changes via **LocalStorage**.
-* Centralized state management of cart contents and user data with **Redux Toolkit**.
-* Reliable server communication via **Axios**.
+### **External Course Search (Udemy)**
+- Users can search for courses from **Udemy** directly within the platform
+- Results are fetched via Google Search API (SerpAPI) and displayed alongside internal courses
+- Each result shows title, description, link, and thumbnail
 
-### Code Architecture
-* **Modular components**, **Redux slices**, and **API calls** are separated into a well-organized folder structure, adhering to the principle of separation of concerns.
+### **Location Autocomplete**
+- Course location fields use **Nominatim (OpenStreetMap)** for address autocomplete
+- Restricted to Israeli addresses, returns road + city + country
 
+### **Order / Cart Management**
+- Add and remove courses from the shopping **cart**
+- Select/deselect items with checkboxes - total updates live
+- Adjust quantity per course
+- Checkout flow with order summary
+- View order history
+- Cart state persisted in **LocalStorage** via Redux
 
+---
 
-## Technologies Used
+## **Technologies**
 
-| Category | Key Technologies |
-| :--- | :--- |
-| **Frontend Core** | **React** (for UI), **Axios** (for API calls) |
-| **State Management** | **Redux Toolkit** |
-| **Form Handling** | **React Hook Form** |
-| **Styling** | **CSS** (extended by styling dependencies listed below) |
-| **Authentication** | **JWT** (managed by backend) |
-| **Storage** | **LocalStorage** (for user session/state persistence) |
+| Category | Technologies |
+|---|---|
+| **Frontend Core** | React, Axios |
+| **State Management** | Redux Toolkit |
+| **Form Handling** | React Hook Form |
+| **Styling** | CSS, Tailwind CSS, Styled Components, Framer Motion |
+| **UI Components** | Chakra UI, Flowbite React, MUI, shadcn/ui |
+| **Authentication** | JWT (managed by backend) |
+| **Storage** | LocalStorage |
+| **AI Integration** | Groq / LLaMA 3.3 (via backend) |
+| **External Search** | SerpAPI / Google (via backend) |
+| **Location** | Nominatim (OpenStreetMap) |
+| **Build Tool** | Vite |
 
+---
 
+## **Project Structure**
 
-## Dependencies
-
-### Core Dependencies
-
-| Package | Description |
-| :--- | :--- |
-| **react** | Core React library for building user interfaces. |
-| **react-dom** | React DOM renderer for web applications. |
-| **react-router-dom** | Client-side routing and navigation. |
-| **react-redux** | Official React bindings for Redux. |
-| **@reduxjs/toolkit** | Simplified and modern Redux state management. |
-| **axios** | Promise-based HTTP client for API communication. |
-| **react-hook-form** | Lightweight form handling and validation. |
-| **sweetalert2** | Elegant alerts, modals, and popups. |
-| **styled-components** | CSS-in-JS styling library. |
-| **framer-motion** | Animation library for React components. |
-| **react-icons** | Popular icons library for React. |
-| **flowbite-react** | Tailwind CSS based UI component library. |
-
-### Dev Dependencies
-
-| Package | Description |
-| :--- | :--- |
-| **vite** | Fast development and build tool. |
-| **eslint** | Linter for maintaining clean and consistent code. |
-| **prettier** | Opinionated code formatter. |
-| **tailwindcss** | Utility-first CSS framework for responsive design. |
-| **postcss** | Tool for transforming CSS with JavaScript plugins. |
-| **autoprefixer** | Automatically adds vendor prefixes to CSS. |
-| **vite-tsconfig-paths** | Adds TypeScript path alias support for Vite. |
-| **eslint-plugin-react** | React-specific linting rules. |
-| **eslint-plugin-react-hooks** | Enforces rules for React Hooks usage. |
-| **eslint-plugin-react-refresh** | Fast Refresh integration for React. |
-
-
-
-
-## Full Folder Structure
-
-The project maintains a clean, scalable structure:
 ```
 skillhub-client/
-├── dist/                      # Compiled / build files
-├── node_modules/              # Installed dependencies
-├── public/                    # Static files (favicon, index.html)
-├── src/                       # Source code
-│   ├── api/                   # Axios API calls
-│   │   ├── courseService.js
-│   │   ├── ordersService.js
-│   │   └── userService.js
-│   ├── app/                   # Redux store setup
-│   │   └── store.js
-│   ├── assets/                # Images, icons, and static assets
+├── public/                    # Static assets (images, favicon)
+├── src/
+│   ├── api/                   # Axios service calls
+│   │   ├── aiService.js           # AI course enhancement
+│   │   ├── courseService.js       # Course CRUD + approval
+│   │   ├── externalService.js     # Udemy search (SerpAPI)
+│   │   ├── locationService.js     # Address autocomplete (Nominatim)
+│   │   ├── ordersService.js       # Orders
+│   │   ├── recommendedService.js  # Personalized recommendations
+│   │   └── userService.js         # Auth + instructor requests
+│   ├── app/
+│   │   └── store.js               # Redux store (cart + user slices)
 │   ├── component/             # Reusable UI components
-│   │   ├── cart/              # Components related to cart
-│   │   ├── common/            # Shared reusable components
-│   │   ├── course/            # Components related to courses
-│   │   ├── layout/            # Layout components (Navbar, Footer, Header)
-│   │   └── order/             # Components related to orders
-│   ├── components/            # Additional reusable components
+│   │   ├── cart/                  # Cart drawer, course in cart
+│   │   ├── common/                # Loading, Avatar, ClampedText, LocationsList, etc.
+│   │   ├── course/                # Course card, carousel, external course card
+│   │   ├── instructor/            # CourseManagementCard (shared by instructor + admin)
+│   │   ├── layout/                # NavBar, Footer
+│   │   └── order/                 # Order display components
+│   ├── components/ui/         # shadcn/ui + Chakra UI base components
 │   ├── features/              # Redux slices
 │   │   ├── cartSlice.js
 │   │   └── userSlice.js
-│   ├── pages/                 # Page-level components (routing)
-│   │   ├── auth/              # Login / Register pages
-│   │   ├── cart/              # Cart pages
-│   │   ├── courses/           # Courses list and details
-│   │   ├── home/              # Home page
-│   │   └── orders/            # Orders pages
-│   ├── App.css                # Global CSS
-│   ├── App.jsx                # Root component
-│   ├── index.css              # Base styling
-│   └── main.jsx               # Entry point (ReactDOM.createRoot)
-├── .env                       # Environment variables (API URLs, etc.)
-├── .gitignore                 # Git ignore rules
-├── eslint.config.js           # ESLint configuration
-├── index.html                 # Main HTML file
-├── package-lock.json
-├── package.json               # Node.js dependencies and scripts
-├── README.md                  # Project documentation
-└── vite.config.js             # Vite configuration
+│   ├── pages/                 # Page-level components
+│   │   ├── auth/                  # Login, SignUp
+│   │   ├── cart/                  # Cart, Checkout, EmptyCart
+│   │   ├── courses/               # CoursesList, CourseDetails
+│   │   │   └── addCourseForm/     # Multi-step add/edit form (Step1–3)
+│   │   ├── home/                  # HomePage (recommendations + hero)
+│   │   ├── instructor/            # AdminDashboard, BecomeInstructor, InstructorCourses
+│   │   └── orders/                # MyOrders
+│   └── utils/                 # Helper functions (course utils, session utils)
+├── .env                       # Environment variables
+├── index.html
+├── package.json
+└── vite.config.js
 ```
 
+---
 
-## Environment Configuration
+## **Pages & Routes**
 
-Before running the client, you must configure the environment variables:
+| Route | Page | Access |
+|---|---|---|
+| `/` | Courses list | Public |
+| `/details/:id` | Course details | Public |
+| `/home` | Home page + recommendations | Public |
+| `/login` | Login | Public |
+| `/signUp` | Register | Public |
+| `/cart` | Shopping cart | Public |
+| `/checkout` | Checkout | Logged in |
+| `/myOrders` | My orders | Logged in |
+| `/orders` | All orders | Logged in |
+| `/add` | Add course | Instructor / Admin |
+| `/edit/:id` | Edit course | Instructor / Admin |
+| `/my-courses` | Instructor's courses | Instructor |
+| `/become-instructor` | Request instructor role | Logged in |
+| `/admin` | Admin dashboard | Admin only |
 
-1.  **Create the `.env` file:**
-    ```bash
-    cp .env.example .env
-    ```
+---
 
-2.  **Edit `.env`** with the appropriate backend endpoints:
+## **Environment Configuration**
 
-    ```bash
-    VITE_API_URL=http://localhost:8000                  # Backend API base URL
-    VITE_CLOUDINARY_URL=http://localhost:8000/api/upload  # Backend endpoint for image uploads
-    ```
+Create a `.env` file in the project root:
 
-> **Important Security Note:**
-> Do not store any Cloudinary API keys or secrets in the client-side code. The `VITE_CLOUDINARY_URL` should point to a backend endpoint that securely handles the upload to the service.
+```bash
+cp .env.example .env
+```
 
+```
+VITE_API_URL=http://localhost:8000
+VITE_CLOUDINARY_URL=http://localhost:8000/api/upload
+VITE_NOMINATIM_URL=https://nominatim.openstreetmap.org
+```
 
+> **Security note:** Never store Cloudinary API keys in the client. The `VITE_CLOUDINARY_URL` points to a backend endpoint that handles the upload securely.
 
-## Installation & Running
+---
+
+## **Installation & Running**
 
 ### Prerequisites
-* **Node.js** version 18 or higher.
-* Access to the **backend REST API** (running, typically at `http://localhost:8000`).
+- Node.js 18+
+- Backend server running at `http://localhost:8000`
 
-### Installation
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/Hadar-Gerashi/SkillHub-client.git
-    cd skillhub-client
-    ```
-2.  Install all dependencies:
-    ```bash
-    npm install
-    ```
+### Install
+```bash
+git clone https://github.com/Hadar-Gerashi/SkillHub-client.git
+cd skillhub-client
+npm install
+```
 
-### Running in Development
-Start the development server using Vite:
+### Run in Development
 ```bash
 npm run dev
 ```
 
-The application will be available in your browser at: http://localhost:5173. Ensure the backend server is running concurrently.
+Available at: [http://localhost:5173](http://localhost:5173)
 
-## Author
+---
+
+## **Author**
 
 **Hadar** - Software Engineering Student  
 Developed as part of final studies project
 
-## Support
+## **Support**
 
 If you encounter any issues or have questions, please open an issue on GitHub or contact the maintainer.
 
-**Happy Shopping!** 
+**Happy Learning!**

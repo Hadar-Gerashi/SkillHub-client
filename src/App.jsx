@@ -14,9 +14,9 @@ import MyOrders from './pages/orders/MyOrders.jsx'
 import HomePage from './pages/home/HomePage.jsx'
 import Footer from './component/layout/Footer.jsx'
 import ScrollToTop from './component/common/ScrollToTop.jsx'
-import AdminDashboard from './pages/instructor/Admindashboard.jsx'
-import BecomeInstructor from './pages/instructor/Becomeinstructor.jsx'
+import BecomeInstructor from './pages/instructor/BecomeInstructor.jsx'
 import MyCourses from './pages/instructor/InstructorCourses.jsx'
+import AdminDashboard from './pages/instructor/Admindashboard.jsx'
 
 
 function App() {

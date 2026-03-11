@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import ChairAltIcon from "@mui/icons-material/ChairAlt";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
@@ -13,6 +13,7 @@ import CoursesList from "./CoursesList";
 import SessionsTable from "../../component/common/Sessionstable";
 import LocationsList from "../../component/common/Locationslist";
 import { DAY_NAMES, parseLocalDate } from "../../utils/courseutils.js";
+import ClampedText from "../../component/common/ClampedText"; // ← import
 import "./CourseDetails.css";
 
 const TABS = ["About", "Details", "Sessions"];
@@ -22,9 +23,6 @@ export const CourseDetails = () => {
   const id = useParams().id;
   const [course, setCourse] = useState();
   const [activeTab, setActiveTab] = useState(0);
-  const [expanded, setExpanded] = useState(false);
-  const [isClamped, setIsClamped] = useState(false);
-  const descRef = useRef(null);
   const { pathname } = useLocation();
 
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
@@ -42,12 +40,6 @@ export const CourseDetails = () => {
     fetchCourse();
   }, []);
 
-  useEffect(() => {
-    if (descRef.current) {
-      setIsClamped(descRef.current.scrollHeight > descRef.current.clientHeight);
-    }
-  }, [course]);
-
   if (!course) return null;
 
   const meetingDays = course.daysOfWeek?.length
@@ -60,9 +52,7 @@ export const CourseDetails = () => {
 
   return (
     <div className="course-page-wrapper">
-
       <div className="course-container">
-
         <img
           className="image-show"
           src={`${import.meta.env.VITE_CLOUDINARY_URL}/${course.img}`}
@@ -70,7 +60,6 @@ export const CourseDetails = () => {
         />
 
         <div className="course-content">
-
           {course.categories?.length > 0 && (
             <div className="course-category-badges">
               {course.categories.map((cat, i) => (
@@ -102,25 +91,12 @@ export const CourseDetails = () => {
             </div>
 
             <div className={`tab-panel${activeTab === 0 ? " active" : ""}`}>
-              <p
-                ref={descRef}
-                className={`other-color course-description${expanded ? " course-description--expanded" : ""}`}
-                style={{
-                  WebkitLineClamp: expanded ? "unset" : 9,
-                }}
-              >
-                {course.describe}
-              </p>
-              {isClamped && !expanded && (
-                <span className="cd-read-toggle" onClick={() => setExpanded(true)}>
-                  Read more...
-                </span>
-              )}
-              {expanded && (
-                <span className="cd-read-toggle" onClick={() => setExpanded(false)}>
-                  Show less
-                </span>
-              )}
+              {/* ← מחליף את ה-<p> + expanded/isClamped state */}
+              <ClampedText
+                text={course.describe}
+                className="other-color course-description"
+                lines={9}
+              />
             </div>
 
             <div className={`tab-panel${activeTab === 1 ? " active" : ""}`}>
@@ -175,7 +151,6 @@ export const CourseDetails = () => {
           >
             Add To Cart
           </button>
-
         </div>
       </div>
 
@@ -183,7 +158,6 @@ export const CourseDetails = () => {
         <h1 className="show-more-title">- SHOW MORE -</h1>
         <CoursesList type="Show" />
       </div>
-
     </div>
   );
 };

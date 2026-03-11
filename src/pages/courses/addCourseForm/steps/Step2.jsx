@@ -143,7 +143,7 @@ const Step2 = ({
                             {showPriceGhost && (
                                 <span className="step2-ai-hint">
                                     <kbd className="step2-kbd">Tab</kbd> or <kbd className="step2-kbd">Enter</kbd> to accept AI suggestion (₪{aiSuggestedPrice})
-                                    {aiPriceNote && <span className="step2-price-note">· 💡 {aiPriceNote}</span>}
+                                    {aiPriceNote && <span className="step2-price-note">{aiPriceNote}</span>}
                                 </span>
                             )}
                         </Field>

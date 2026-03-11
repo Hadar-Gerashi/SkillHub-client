@@ -92,8 +92,14 @@
 }
 
 .submit-btn {
-    width: 385px !important;
+    width: 100% !important;
     color: black !important;
     background-color: white !important;
     visibility: visible !important;
+}
+
+@media (max-width: 480px) {
+    .card-signup {
+        min-height: unset;
+    }
 }

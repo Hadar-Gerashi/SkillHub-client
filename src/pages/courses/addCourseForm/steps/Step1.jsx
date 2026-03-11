@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import { useSelector } from "react-redux";
 
 import { Field } from "../../../../components/ui/field.jsx";
+import { enhanceCourse } from "../../../../api/aiService.js";
 import "./Step1.css";
 
 const Step1 = ({ register, errors, isEdit, details, setValue, trigger, getValues, onAiSuggest }) => {
@@ -26,16 +27,8 @@ const Step1 = ({ register, errors, isEdit, details, setValue, trigger, getValues
         if (isEdit) return;
         setIsLoading(true);
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/ai/enhance-course`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `${currentUser?.token}`,
-                },
-                body: JSON.stringify({ name }),
-            });
-            const data = await res.json();
-            if (res.ok) setAiSuggestion(data);
+            const res = await enhanceCourse(name, currentUser?.token);
+            setAiSuggestion(res.data);
         } catch (e) {
             console.error(e);
         } finally {

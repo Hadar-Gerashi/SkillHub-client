@@ -233,16 +233,16 @@ const AddCourseForm = () => {
         <h1 className="title">{isEdit ? "- UPDATE " : "- ADD "}COURSE -</h1>
 
         {isEdit && pendingEdit && (
-          <div style={{ background: "rgba(255,200,0,0.12)", border: "1px solid rgba(255,200,0,0.4)", borderRadius: "10px", padding: "14px 20px", marginBottom: "24px", color: "#ffd700", fontSize: "0.9rem" }}>
+          <div className="pending-edit-banner">
             <strong>You have a pending edit awaiting admin approval.</strong>
-            <p style={{ marginTop: "8px", color: "rgba(255,215,0,0.75)", fontSize: "0.82rem" }}>Submitting a new edit will replace the pending one.</p>
+            <p>Submitting a new edit will replace the pending one.</p>
           </div>
         )}
 
         {isEdit && !pendingEdit && details?.course?.lastEditStatus === "rejected" && (
-          <div style={{ background: "rgba(220,53,69,0.12)", border: "1px solid rgba(220,53,69,0.4)", borderRadius: "10px", padding: "14px 20px", marginBottom: "24px", color: "#ff6b6b", fontSize: "0.9rem" }}>
+          <div className="rejected-edit-banner">
             <strong>Your last edit was rejected by admin.</strong>
-            <p style={{ marginTop: "6px", color: "rgba(255,107,107,0.75)", fontSize: "0.82rem" }}>The course remains as approved. You can submit a new edit below.</p>
+            <p>The course remains as approved. You can submit a new edit below.</p>
           </div>
         )}
 
@@ -292,25 +292,16 @@ const AddCourseForm = () => {
             setValue={setValue}
           />
         )}
-
         {step === 3 && (
           <div style={{ textAlign: "center" }}>
             <h3 className="end">
-              {isEdit
-                ? "Edit submitted for admin approval!"
-                : currentUser?.role === "INSTRUCTOR"
-                  ? "Course submitted for admin approval!"
-                  : "The course was successfully added!!!"}
+              {isEdit ? "Edit submitted for admin approval!" : currentUser?.role === "INSTRUCTOR" ? "Course submitted for admin approval!" : "The course was successfully added!!!"}
             </h3>
             {isEdit && currentUser?.role === "INSTRUCTOR" && (
-              <p style={{ color: "#888", marginTop: "10px", fontSize: "0.95rem" }}>
-                Your changes are pending review. The course remains live with its current content until approved.
-              </p>
+              <p className="end-subtitle">Your changes are pending review. The course remains live with its current content until approved.</p>
             )}
             {!isEdit && currentUser?.role === "INSTRUCTOR" && (
-              <p style={{ color: "#888", marginTop: "10px", fontSize: "0.95rem" }}>
-                You will be notified once an admin reviews your course.
-              </p>
+              <p className="end-subtitle">You will be notified once an admin reviews your course.</p>
             )}
           </div>
         )}
